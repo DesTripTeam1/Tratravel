@@ -19,7 +19,7 @@ const Landing = () => {
    </WelcomeImg>
 
   <WelcomeGreet> 
-    <h1 class="greet" >
+    <h1 className="greet" >
     TE DAMOS <br></br> LA BIENVENIDA <br></br>A TRATRATRAVEL
     </h1>
   </WelcomeGreet>

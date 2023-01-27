@@ -14,7 +14,7 @@ const Form = () => {
   const [saveCiudad, setSaveCiudad] = useState("");
   const [saveOption1, setSaveOption1] = useState("");
   const [saveOption2, setSaveOption2] = useState("");
-  const [exito, setExito] = useState("");
+  const [exito, setExito] = useState('');
 
   const onOptionChangeCiudad = (event) => {
     setSaveCiudad(event.target.value);
@@ -31,17 +31,19 @@ const Form = () => {
     console.log(`${process.env.REACT_APP_MY_KEY}`)
     const datoTravel = {
       model: "text-davinci-003",
-      prompt: `Soy de ${saveCiudad}, recomiéndame un listado de 2 lugares dentro del territotio español para viajar que tenga ${saveOption1} en el que se pueda disfrutar de ${saveOption2}`,
+      prompt: `Soy de ${saveCiudad}, recomiéndame un listado de 2 lugares  dentro del territotio español para viajar que tenga ${saveOption1} en el que se pueda disfrutar de ${saveOption2} en un array de dos objetos en formato JSON con los siguientes campos: "nombre", "localización"`,
       temperature: 0.5,
       max_tokens: 400,
     };
 
     try {
       const data = await axios.post(endPointIA, datoTravel, datoHeader);
-      console.log(data)
+      console.log(data.data.choices[0].text)
+
+      
       setExito("Cargando respuesta ...");
     
-        setExito(data.data.choices[0].text);
+        setExito(JSON.parse(data.data.choices[0].text)[0].nombre) ;
       
       
     } catch (err) {
@@ -73,8 +75,6 @@ const Form = () => {
         </FormInput>
         <FormBtn onClick={sendData}>ENVIAR</FormBtn>
         </FormOptions>}
-     
-      
       
         
     </FormContainer>

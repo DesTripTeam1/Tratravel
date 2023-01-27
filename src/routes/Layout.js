@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { NavContainer, NavLogo, NavItems, NavLinks, MainContent, LogoImg } from '../styles/LayoutStyles'
-import Img from '../images/logo.png'
+import Img from '../images/logray.png'
 
 const Layout = () => {
   return (
