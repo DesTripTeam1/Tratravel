@@ -14,13 +14,14 @@ export const NavContainer = styled.div`
 
 `
 export const NavLogo = styled.h1`
-    font-size: 24px;
+    font-size: 38px;
 `
 export const NavItems = styled.ul`
     list-style: none;
     display: flex;
     flex-direction: row;
     padding: 0.5rem;
+    padding-right: 3rem;
 `
 export const NavLinks = styled(NavLink)`
     font-size: 18px;
@@ -41,5 +42,7 @@ export const MainContent = styled.div`
 
 export const LogoImg = styled.img`
     width: 100%;
-    height: 70px;
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 5px;
 `

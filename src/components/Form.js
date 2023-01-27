@@ -19,9 +19,10 @@ const Form = () => {
   const [saveCiudad, setSaveCiudad] = useState("");
   const [saveOption1, setSaveOption1] = useState("");
   const [saveOption2, setSaveOption2] = useState("");
+
   const [saveResult, setSaveResult] = useState("");
   const [exito, setExito] = useState("");
-  
+
 
   const onOptionChangeCiudad = (event) => {
      
@@ -46,8 +47,10 @@ const Form = () => {
     
     const datoTravel = {
       model: "text-davinci-003",
+
       prompt: `Soy de ${saveCiudad}, recomiéndame un listado de 2 lugares  dentro del territotio español para viajar que tenga ${saveOption1} en el que se pueda disfrutar de ${saveOption2} in  array two objet , form JSON  "nombre", "ubicación","provincia"`,
       temperature: 0,
+
       max_tokens: 400,
     };
   
@@ -72,6 +75,7 @@ const Form = () => {
       const textoForm = "Los mejores destinos son :  "
       setExito(FrasesSabiasQue[num]);
       const data = await axios.post(endPointIA, datoTravel, datoHeader);
+
       
 
         const arrayRes = []
@@ -102,6 +106,7 @@ const Form = () => {
       }
       console.log(datooutput)
       const dataout = await axios.post(endPointdata2, datooutput);
+
       
       
     } catch (err) {
@@ -162,7 +167,7 @@ const Form = () => {
         </FormInput>
         <FormBtn onClick={sendData}>ENVIAR</FormBtn>
         </FormOptions>}
-     
+
     </FormContainer>
       
     
