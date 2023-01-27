@@ -43,7 +43,7 @@ const Form = () => {
       
       setExito("Cargando respuesta ...");
     
-        setExito(JSON.parse(data.data.choices[0].text)[0].nombre) ;
+        setExito(data.data.choices[0].text) ;
       
       
     } catch (err) {
