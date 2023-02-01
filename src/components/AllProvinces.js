@@ -4,28 +4,29 @@ import { provincesSpain } from '../assets/provincesSpain'
 import PopOver from './PopOver'
 import FichaTecnica from './FichaTecnica'
 
-const style = {
-  width: '100vw',
-  height: '100vh',
-}
-
 const posicion = 43
 const queProvinciaEs = provincesSpain.features[posicion]
 //console.log(`La numero ${posicion} es ${queProvinciaEs.fields.provincia}`);
 
+const style = {
+  width: '100vw',
+  height: '85vh',
+}
+// HASTA AQUI LA PRUEBA AAAAAAAAA AAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAA AAAAAAAAAAA
 function AllProvinces() {
   const [provinciaState, setProvinciaState] = useState('')
+  const [comAut, setComAut] = useState('')
   const [fichaTecnica, setFichaTecnica] = useState('')
-
+  
   return (
     <>
-    {provinciaState ? <PopOver provincia={provinciaState}/> : null}
-    {fichaTecnica ? <FichaTecnica provinceInfo={fichaTecnica} setFichaTecnica={setFichaTecnica}/> : null}
+    {provinciaState ? <PopOver provincia={provinciaState} comAut={comAut}/> : null}
+    {fichaTecnica ? <FichaTecnica provinceInfo={fichaTecnica} setFichaTecnica={setFichaTecnica} comAut={comAut}/> : null}
     <MapContainer 
-      center={[39.30786, -9.50983]} 
-      zoom={6}
+      center={[35.80786, -9.50983]} 
+      zoom={5}
       style={style}
-      scrollWheelZoom={true}>
+      scrollWheelZoom={false}>
         <TileLayer 
           url='https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=isS2PeyfRxdadSKBUjC7'
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'  
@@ -57,7 +58,8 @@ function AllProvinces() {
                   dashArray: '3',
                   color: 'white',
                 })
-                setProvinciaState(provincia.fields.texto)
+                setProvinciaState(provincia.fields.provinceInfo)
+                setComAut(provincia.fields.ccaa)
               },
               mouseout: (e) => {
                 const layer = e.target;
@@ -69,6 +71,7 @@ function AllProvinces() {
                   color: 'white',
                 })
                 setProvinciaState('')
+                setComAut('')
               },
               click: (e) => {
                 setFichaTecnica(provincia.fields.provinceInfo)
@@ -97,7 +100,8 @@ function AllProvinces() {
                   dashArray: '3',
                   color: 'white',
                 })
-                setProvinciaState(provincia.fields.texto)
+                setProvinciaState(provincia.fields.provinceInfo)
+                setComAut(provincia.fields.ccaa)
               },
               mouseout: (e) => {
                 const layer = e.target;
@@ -109,6 +113,7 @@ function AllProvinces() {
                   color: 'white',
                 })
                 setProvinciaState('')
+                setComAut('')
               },
               click: (e) => {
                 setFichaTecnica(provincia.fields.provinceInfo)

@@ -1,10 +1,21 @@
 .containerPopOverProvincia {
-    width: 200px;
+    width: 240px;
     height: fit-content;
-    background-color: #0005;
+    background-color: hsla(0, 0%, 0%, 0.65);
+    color: beige;
     position: absolute;
     z-index: 500;
     margin-left: 10vw;
-    text-align: center;
     border-radius: 0 0 20px 20px;
+    padding: 0 5px 20px 15px;
+    font-size: 1.1em;
+}
+
+.containerPopOverProvincia .provincia{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.containerPopOverProvincia p{
+    margin-left: 40px;
 }

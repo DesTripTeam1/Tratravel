@@ -1,38 +1,84 @@
 .divFichaTecnica{
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     z-index: 510;
     background-color: hsla(0, 0%, 0%, 0.80);
-
 }
 
-.infoFicha{
-    width: fit-content;
-    background-color: aliceblue;
+.imgLanding{
+    max-width: 80vw;
+    max-height: 80vh;
+    position: relative;
+    width: 50%;
+    height: 70%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 80%, black);
+    background-position: center;
+    background-size: cover;
     border-radius: 15px;
-    padding: 20px;
-    border: 2px solid black;
+    z-index: 700;
 }
 
 .closeBTN{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 3px;
     cursor: pointer;
     border: 1px solid black;
-    padding: 2px;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 0;
+    right: 0;
 }
 
-.infoFicha img{
-    margin: 0 10%;
-    border-radius: 10px;
-    border: 2px solid black;
-    max-width: 350px;
+.imgTitle{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 25px;
+    color: white;
 }
 
-.infoFicha .listados{
-    display: flex;
+.divFichaTecnica .provinciaInfo {
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    padding: 15px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    z-index: 800;
+    transition: 0.5s;
+    box-shadow: 0 5px 10px black;
+    border-radius: 15px;
 }
 
+/* .divFichaTecnica:hover .provinciaInfo{
+    left: 50%;
+} */
 
+.provinciaInfo .title{
+    font-size: 2rem;
+}
+
+.habYcom {
+    margin: 10px 0;
+}
+
+.ccaa, .hab{
+    font-weight: 900;
+}
+
+.dato {
+    margin: 5px 0 5px 20px;
+}
