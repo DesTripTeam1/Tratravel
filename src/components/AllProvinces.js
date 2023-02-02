@@ -12,7 +12,7 @@ const style = {
   width: '100vw',
   height: '85vh',
 }
-// HASTA AQUI LA PRUEBA AAAAAAAAA AAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAA AAAAAAAAAAA
+
 function AllProvinces() {
   const [provinciaState, setProvinciaState] = useState('')
   const [comAut, setComAut] = useState('')
@@ -31,10 +31,8 @@ function AllProvinces() {
           url='https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=isS2PeyfRxdadSKBUjC7'
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'  
         /> 
-        
       {provincesSpain.features.map((provincia) => {   
         return (provincia.fields.geo_shape.type === 'MultiPolygon')
-
         ? provincia.fields.geo_shape.coordinates.map((nivel1, index) => {
           const MultiPolygonCoordinates = nivel1[0].map((item) => [item[1], item[0]])
           return (<Polygon
