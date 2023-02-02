@@ -35,7 +35,7 @@ const Login = () => {
         localStorage.setItem('token', token)
         navigate('/form')
       } catch (error) {
-        console.log(error)
+  
         if(error.response.data === "\"email\" is not allowed to be empty"){
           setError("Introduce un email")
         } else if (error.response.data === "\"password\" is not allowed to be empty"){
@@ -60,15 +60,15 @@ const Login = () => {
       }
 
       try {
-        console.log(loggedUser)
+     
         const response = await axios.post("https://travel-db-wy62.onrender.com/auth", loggedUser)
         const token = response.headers["x-auth-token"]
         localStorage.setItem('token', token)
-        console.log('logeado')
+      
         dispatch({type: 'login'})
-        navigate('/form')
+        navigate('/')
       } catch (error) {
-        console.log(error)
+      
         if(error.response.data === "\"email\" is not allowed to be empty"){
           setError("Introduce un email")
         } else if (error.response.data === "\"password\" is not allowed to be empty"){

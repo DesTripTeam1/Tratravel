@@ -1,8 +1,8 @@
 import "../styles/Landing.css";
 import React, {useEffect} from 'react'
-import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import {WelcomeImg, WelcomeGreet, WelcomeAbout, WelcomeTitle, AboutTitle, AboutP, AboutBtn} from "../styles/LandingStyles";
+import jwt_decode from 'jwt-decode'
 
 const Landing = () => {
 
@@ -10,11 +10,21 @@ const Landing = () => {
       const getUsers = async () => {
         const startDb = await fetch("https://travel-db-wy62.onrender.com/users")
         const data = await startDb.json()
-        console.log(data)
+ 
       }
       getUsers()
   }, [])
 
+  function getCurrentUser(){
+    try {
+      const token = localStorage.getItem('token')
+      return jwt_decode(token)
+    } catch (ex) {
+      return null
+    }
+  }
+
+  const currentUser = getCurrentUser()
 
   
 
@@ -47,7 +57,9 @@ const Landing = () => {
     </AboutTitle>
     <AboutP>
     ¿Quieres comenzar a usar Tratratravel? Regístrate ahora para tener una experiencia de usuario totalmente personalizada.
-    <AboutBtn onClick={start}>COMIENZA YA</AboutBtn>
+    
+    {currentUser ? <AboutBtn disabled>COMIENZA YA</AboutBtn> : <AboutBtn onClick={start}>COMIENZA YA</AboutBtn>}
+    
     </AboutP>
     
   </WelcomeGreet>

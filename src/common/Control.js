@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft} from "@fortawesome/free-solid-svg-icons";
 import "../styles/Controls.css";
 import axios from "axios";
 import {
@@ -159,7 +159,7 @@ export default function Controls({
         )}
       
         disabled={
-          currentIndex == 2 && !saveResultFinal ||
+          currentIndex === 2 && !saveResultFinal ||
           currentIndex >= 1 && (!saveCiudad || !saveOption1 || !saveOption2) || currentIndex === 4
         }
       >

@@ -6,6 +6,7 @@ import FormTravel from "../components/FormTravel";
 import Panel from "../components/Panel";
 import Advice from "../components/Advice"
 import AllProvinces from "../components/AllProvinces";
+import ProtectedRoute from "../hooks/ProtectedRoute";
 
 
 export const router = createBrowserRouter([
@@ -19,11 +20,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'form',
-                element: <FormTravel/>
+                element: (<ProtectedRoute><FormTravel /></ProtectedRoute>)
             },
             {
                 path: 'advice',
-                element: <Advice />
+                element: (<ProtectedRoute><Advice /></ProtectedRoute>)
             },
             {
                 path: 'login',

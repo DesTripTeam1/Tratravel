@@ -6,7 +6,7 @@ import FichaTecnica from './FichaTecnica'
 
 const posicion = 43
 const queProvinciaEs = provincesSpain.features[posicion]
-//console.log(`La numero ${posicion} es ${queProvinciaEs.fields.provincia}`);
+
 
 const style = {
   width: '100vw',

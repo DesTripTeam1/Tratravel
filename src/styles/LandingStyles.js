@@ -34,7 +34,6 @@ export const WelcomeAbout = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  
     
     
 `
@@ -50,6 +49,16 @@ export const WelcomeTitle = styled.h1`
     font-size:      60px;
     text-shadow: 4px 0 #000, -2px 0 #ccc, 0 2px #ccc, 0 -5px #000,
     1px 1px #ccc, -1px -7px #ccc, 1px -1px #ccc, -1px 1px #000;
+
+    @media(max-width: 715px){
+        font-size: 45px;
+    }
+
+    @media(max-width: 400px){
+        font-size: 32px;
+    }
+
+    
 `
 export const AboutTitle = styled.h2`
     color: white;
@@ -62,6 +71,10 @@ export const AboutTitle = styled.h2`
     text-shadow: 4px 0 #000, -2px 0 #ccc, 0 2px #ccc, 0 -5px #000,
     1px 1px #ccc, -1px -7px #ccc, 1px -1px #ccc, -1px 1px #000;
     max-width: 100%;
+
+    @media(max-width: 643px){
+        display: none;
+    }
 `
 
 export const AboutP = styled.p`
@@ -78,14 +91,37 @@ export const AboutP = styled.p`
     font-size: 30px;
     font-weight: 700;
     text-shadow: 3px 3px 1px black;
-    border-radius:20px; 
+    border-radius: 20px; 
     background-color: rgba(135, 135, 135,0.1);
+
+    @media(max-width: 1000px){
+        font-size: 20px;
+    }
+
+    @media(max-width: 765px){
+        font-size: 15px;
+    }
+
+    @media(max-width: 643px){
+        font-size: 15px;
+        background: none;
+        margin-left: 30px;
+    }
+    
+
+    @media(max-width: 545px){
+        margin-left: 20px;
+    }
+
+    @media(max-width: 501px){
+        background: none;
+    }
   
 `
 
 export const AboutBtn = styled.button`
     cursor: pointer;
-    width: 20%;
+    width: 150px;
     margin-right: 50px;
     margin-top: 20px;
     padding: 0.3rem;

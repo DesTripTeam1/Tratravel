@@ -8,7 +8,7 @@ export default function Cards({currentIndex, slides}) {
       
       {slides && slides.map((slide, index)=>{
 
-        const activeClass = (index === currentIndex) ? " active" : "";
+        const activeClass = (index === currentIndex) ? " active1" : "";
         const isGotoLeftClass = (index < currentIndex) ? " go-to-left" : "";
         const isGotoRightClass= (index > currentIndex) ? " go-to-right" : "";
 

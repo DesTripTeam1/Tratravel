@@ -36,7 +36,7 @@ const FormTravel = () => {
 
   const onOptionChangeCiudad = (event) => {
     const resultado =
-      ciudad.findIndex((word) => word == event.target.value) + 1;
+      ciudad.findIndex((word) => word === event.target.value) + 1;
     setSaveCiudad(resultado);
   };
   const onOptionChangeHandler = (event) => {
@@ -102,7 +102,7 @@ const FormTravel = () => {
                 onClick={() =>
                   setSaveResultFinal(
                     saveResult.slice(0, 3),
-                    console.log(saveResultFinal)
+         
                   )
                 }
               >
@@ -113,7 +113,7 @@ const FormTravel = () => {
                 onClick={() =>
                   setSaveResultFinal(
                     saveResult.slice(3, 6),
-                    console.log(saveResultFinal)
+             
                   )
                 }
               >
@@ -123,7 +123,7 @@ const FormTravel = () => {
           )}
           <br />
           <br />
-          {saveResultFinal && saveResult ? (
+          {saveResultFinal ? (
             <>Has elegido : {saveResultFinal[0]}</>
           ) : (
             saveResultFinal

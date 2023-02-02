@@ -23,3 +23,10 @@
     border-radius: 5%;
     background-color: rgba(0,0,0,0.7);
   }
+
+  @media(max-width: 540px){
+    .containerCardIA{
+      width: 300px;
+    }
+    
+  }

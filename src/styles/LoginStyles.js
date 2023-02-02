@@ -26,18 +26,27 @@ export const LoginForm = styled.form`
     /* border: 1mm ridge  #cacbcd; */
     box-shadow: 2px 2px 2px 3px black;
     border-radius: 10px;
-    width: 400px;
-    height: 300px;
+    width: 30%;
+    height: 50%;
     padding: 2rem;
     font-size: 18px;
     text-shadow: 3px 3px 3px black;
     background: #5d5d5d;
     opacity: 93%;
+
+    @media(max-width: 765px){
+        width: 45%;
+    }
+
+    @media(max-width: 765px){
+        width: 60%;
+    }
 `
 export const LoginInput = styled.input`
     outline: none;
     margin: 10px;
     margin-bottom: 10px;
+    width: 60%;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     background-color: #cacbcd;

@@ -10,7 +10,6 @@ export const FormContainer = styled.div`
     background-image: url(${img});
     background-size: cover;
     background-size: 100% 100%;
-    background-repeat: no-repeat;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
 `
@@ -20,6 +19,10 @@ export const FormTitle = styled.h1`
     color: white;
     text-shadow: 3px 3px 3px black;
     margin-bottom: 15px;
+
+    @media(max-width: 540px){
+        font-size: 24px;
+    }
 `
 
 export const FormJson = styled.div`

@@ -34,6 +34,12 @@ export const NavLinks = styled(NavLink)`
     &:hover{
         border-bottom: 2px solid #286078; 
     }
+
+    
+
+    @media(max-width: 540px){
+        font-size: 12px;
+    }
 `
 
 export const MainContent = styled.div`

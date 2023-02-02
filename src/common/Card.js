@@ -6,11 +6,13 @@ import React from 'react'
 export default function Card(props) {
   return (
     <> 
+    
     <div className='icon-container'>
       <FontAwesomeIcon icon={props.iconElement} />
-      <p className='title'>{props.title}</p>
+          </div>
+      <p className='titleForm'>{props.title}</p>
       <p className='description'>{props.description}</p>
-      </div>
+    
     </>
   )
 }

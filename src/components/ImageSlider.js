@@ -8,15 +8,11 @@ const ImageSlider = () => {
   const [saveResultFinal, setSaveResultFinal] = UserConsumer();
   
 
-let images = ""
-let SliderData=[]
- 
-
 
 useEffect(() => {
 
   
-  fetch(`https://pixabay.com/api/?key=32822302-e0bccee14336fc56618e7f358&q=${saveResultFinal[2]}+city&image_type=photo&pretty=true`)
+  fetch(`https://pixabay.com/api/?key=32822302-e0bccee14336fc56618e7f358&q=${saveResultFinal[1]}+city&image_type=photo&pretty=true`)
   .then(response => response.json())
   .then(data =>   setImagenArray(data));
 }
@@ -32,10 +28,13 @@ useEffect(() => {
 
   <div className="slider">
    
-   { <button className="right-arrow" onClick={()=>current == 6 ? "": setCurrent(current + 1)} > + </button>}
-   <img src={imagenArray.hits[current].largeImageURL} alt='travel image' className='image' /> 
+   { <button className="right-arrow" onClick={()=>current === imagenArray.hits.length - 1 ? "": setCurrent(current + 1)} > + </button>}
+   <img onError={({ currentTarget }) => {
+            currentTarget.onerror = null; // prevents looping
+            currentTarget.src = "https://wallpapercave.com/wp/wp3187292.jpg";
+          }} src={imagenArray.hits[current].largeImageURL} alt='travel image' className='image' /> 
    
-   {   <button className="left-arrow" onClick={()=>current == 0 ? "":setCurrent(current - 1) } > - </button>}
+   {   <button className="left-arrow" onClick={()=>current === 0 ? "":setCurrent(current - 1) } > - </button>}
   </div>
 }
  </>

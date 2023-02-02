@@ -14,6 +14,12 @@ body{
     font-size: 1.25px;
     margin-top: 10px;
   }
+
+  @media(max-width: 785px){
+    .center{
+      display: none;
+    }
+  }
   
   .center:hover{
     transform:prespective(1000px) translate(-50%,-50%);
