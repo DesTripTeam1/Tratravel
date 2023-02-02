@@ -57,3 +57,7 @@
 .btnFormResult:hover{
     background-color: #333;
         color: white;}
+
+        .btnFormResult:visited{
+            background-color: #333;
+                color: white;}

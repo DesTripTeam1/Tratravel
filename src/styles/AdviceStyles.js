@@ -20,9 +20,9 @@ export const AdviceContainer = styled.div`
 
 
 export const AdviceImg = styled.div`
-@media(max-width: 900px){
+/* @media(max-width: 900px){
        margin-top: 50px;
-    }
+    } */
 
 `
 
