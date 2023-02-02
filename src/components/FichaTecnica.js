@@ -21,16 +21,16 @@ const FichaTecnica = ({provinceInfo, setFichaTecnica, comAut}) => {
             </div>
          </div>
          <div className="listas">
-                <ul>
-                    <p>Pueblos Destacados</p>
+                <ul className='pueblos'>
+                    <p>Pueblos destacados</p>
                     {provinceInfo.pueblosDestacados.map((pueblo, index) => <li key={index}>{pueblo}</li>)}
                 </ul>
-                <ul>
-                    <p>Fiestas Populares</p>
+                <ul className='fiestas'>
+                    <p>Fiestas populares</p>
                     {provinceInfo.fiestasPopulares.map((fiesta, index) => <li key={index}>{fiesta}</li>)}
                 </ul>
-                <ul>
-                    <p>Platos Tipidos</p>
+                <ul className='platos'>
+                    <p>Platos típicos</p>
                     {provinceInfo.platosTipicos.map((plato, index) => <li key={index}>{plato}</li>)}
                 </ul>
             </div>
