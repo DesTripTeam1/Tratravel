@@ -12,7 +12,7 @@ const ImageSlider = () => {
 useEffect(() => {
 
   
-  fetch(`https://pixabay.com/api/?key=32822302-e0bccee14336fc56618e7f358&q=${saveResultFinal[2]}+city&image_type=photo&pretty=true`)
+  fetch(`https://pixabay.com/api/?key=32822302-e0bccee14336fc56618e7f358&q=${saveResultFinal[1]}+city&image_type=photo&pretty=true`)
   .then(response => response.json())
   .then(data =>   setImagenArray(data));
 }
